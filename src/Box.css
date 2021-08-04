@@ -1,0 +1,9 @@
+.row {
+    border: 1px solid gray;
+    padding: 10px;
+}
+  
+.column {
+    background-color: antiquewhite;
+    padding: 10px;
+}

@@ -1,25 +1,32 @@
-import logo from './logo.svg';
 import './App.css';
+import Child from './Child';
+import AnotherChild from './AnotherChild';
+import Box from './Box';
+import ErrorBoundary from './ErrorBoundary';
+import Modal from './Modal';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = () => {  
+    return (
+      <div className="App">
+            <ErrorBoundary>
+              <Box>
+                <Child />
+                <span>hello</span>
+                <h2>Hi</h2>
+              </Box>
+            </ErrorBoundary>
+            <ErrorBoundary>
+              <Box>
+                <AnotherChild />
+              </Box>
+            </ErrorBoundary>
+            <ErrorBoundary>
+              <Modal>
+                  <h2>Hello</h2>
+              </Modal>       
+            </ErrorBoundary> 
+      </div>
+    );  
 }
 
 export default App;
